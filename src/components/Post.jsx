@@ -1,26 +1,61 @@
+
 import styles from './Post.module.css'
 import { useState } from 'react';
 
-function Post({author, content="No content provided"}){
+function Post({ author, content = "No content provided", onEdit, onDelete }) {
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [currentContent, setCurrentContent] = useState(content);
 
-    const [postContent, setPostContent]=useState(content);
+  const handleCancle = () => {
+    setIsEditMode(false);
+    setCurrentContent(content);
+  };
 
-    const handleInputChange=(event)=>{
-        setPostContent(event.target.value);
-    };
+  const handleSave = () => {
+    setIsEditMode(false);
+    onEdit(currentContent);
+  };
 
-    return (
-    <div class={styles.container}>
-        <p class={styles.name}>{author}</p>
-        <p class={styles.content}>{postContent}</p>
-        <input
-        className={styles.input}
-        type="text"
-        onChange={handleInputChange}
-        placeholder='can edit here post content'        
-        ></input>
+  return (
+    <div className={styles.container}>
+      <p className={styles.name}>{author}</p>
+      <p className={styles.content}>{content}</p>
+
+      {!isEditMode && (
+        <>
+          <button className={styles.button + " " + styles.edit} onClick={() => setIsEditMode(true)}>
+            Edit
+          </button>
+
+          <button className={styles.button + " " + styles.delete} onClick={onDelete}>
+            Delete
+          </button>
+        </>
+      )}
+
+      {isEditMode && (
+        <div className={styles.editArea}>
+          <input
+            value={currentContent}
+            className={styles.input}
+            type="text"
+            onChange={(event) => setCurrentContent(event.target.value)}
+            placeholder="can edit here post content"
+          />
+
+          <div className={styles.DecisionButtons}>
+            <button className={styles.button + " " + styles.cancle} onClick={handleCancle}>
+              Cancle
+            </button>
+
+            <button className={styles.button + " " + styles.save} onClick={handleSave}>
+              Save
+            </button>
+          </div>
+        </div>
+      )}
     </div>
-    );  
+  );
 }
 
 export default Post;
