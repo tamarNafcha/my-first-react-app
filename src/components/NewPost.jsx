@@ -1,16 +1,20 @@
 
 import { useState } from 'react';
 import styles from './NewPost.module.css';
+import { useNavigate, useOutletContext } from 'react-router';
 
-function NewPost({ onClose, onCreate }) {
+function NewPost() {
   const [authorName, setAuthorName] = useState("");
   const [postContent, setPostContent] = useState("");
+  const {onCreate}= useOutletContext();
+  let navigate=useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     onCreate(authorName, postContent);
     setAuthorName("");
     setPostContent("");
+    navigate("/posts");
   };
 
   return (
@@ -51,7 +55,7 @@ function NewPost({ onClose, onCreate }) {
           Create Post
         </button>
 
-        <button type="button" onClick={onClose} className={styles.cancelButton}>
+        <button type="button" onClick={()=>navigate("/posts")} className={styles.cancelButton}>
           Cancel
         </button>
       </div>

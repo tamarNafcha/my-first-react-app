@@ -31,23 +31,42 @@ body {
 }
 
 .input{
-  background-color: #e1e2e3;
+  background-color: #e7f0fa;
   border-radius: 6px;
+  border: 1px solid;
+  padding: 5px ;
+  width: 300px;
+
 }
 
 .cancle{
-  background-color: rgb(219, 84, 84);
+  background-color: rgb(186, 134, 170);
+  width: 120px;
 }
 
 .save{
-  background-color: rgb(55, 207, 207);
+  background-color: rgb(128, 202, 202);
+  width: 120px;
 }
 
 .edit{
   background-color: #5c90c4;   
+  width: 100px;
+}
+
+.back{
+  background-color: rgb(218, 195, 216);
+  width: 200px;
+}
+
+.btnDiv{
+   display: flex;
+  justify-content: center;
 }
 
 .button{
   border-radius: 6px;
-  margin: 6px
-}
+  margin: 6px;
+  border: 1px solid;
+  padding: 5px ;
+} 

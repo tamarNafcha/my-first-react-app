@@ -1,28 +1,83 @@
 # React Posts App
 
-A small React + Vite project for practicing basic React concepts.
+A React + Vite application for managing posts, built as part of a learning exercise to practice modern React concepts, routing, and API integration.
 
-## What the project includes
+---
 
-- Displaying posts from an array of objects
-- Rendering posts dynamically using `map()`
-- Editing post content
-- Saving or canceling edit mode
-- Adding a new post with a controlled form
-- Closing the form by clicking Cancel or clicking outside the form
-- Deleting posts dynamically
-- Logging the updated posts array to the console
+## Features
+
+### Routing & Navigation
+- Home page (`/`) – clean welcome screen
+- Posts page (`/posts`) – main working area
+- About page (`/about`)
+- 404 Page Not Found for invalid routes
+
+---
+
+### Posts Management
+- Display posts list
+- View a single post (`/posts/:postId`)
+- Edit post content (Edit / Save / Cancel)
+- Add a new post (`/posts/new`)
+- Navigate back to posts list
+- Log all posts to the console
+
+---
+
+### State Management
+- Centralized state in the Posts layout component
+- Data shared across components using `useOutletContext`
+- Dynamic UI updates after:
+  - Adding a post
+  - Editing a post
+  - Deleting a post
+
+---
+
+### API Integration
+- Fetch posts from:
+  https://jsonplaceholder.typicode.com/posts
+
+- Data mapping:
+  - `title` → post title
+  - `body` → post content
+
+- Implemented using:
+  - `useEffect` for data fetching
+  - `useState` for state management
+
+---
+
+### UI States
+- Loading state (`Loading...`)
+- Error handling for failed API requests
+
+---
+
+### UI & Styling
+- Clean multi-page layout (no popups)
+- Fixed Header with navigation (NavLink + active state)
+- Dynamic content area using React Router `Outlet`
+- CSS Modules for scoped styling
+- Responsive and modern UI design
+
+---
 
 ## Main React Concepts Practiced
 
-- Components
-- Props
+- Components architecture
+- Props & component communication
+- Lifting state up
 - useState
+- useEffect
+- Controlled components (forms)
 - Conditional rendering
-- Events
-- Controlled components
-- Updating arrays in state
-- CSS Modules
+- Event handling
+- React Router (Routes, NavLink, Outlet, Params, Navigation)
+- Context sharing via `useOutletContext`
+- Working with external APIs (fetch)
+
+---
 
 ## How to run the project
 

@@ -1,3 +1,4 @@
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -187,9 +188,11 @@
 .button{
   border-radius: 6px;
   margin: 20px;
-  background-color: rgb(218, 195, 216);
-  
-}
+  background-color: rgb(205, 173, 202);
+  border: 1px solid;
+  padding: 5px ;
+  width: 200px;
+} 
 
 .modalbackdrop {
   position: fixed;
@@ -199,4 +202,5 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
-}
+}  
+

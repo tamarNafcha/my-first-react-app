@@ -1,4 +1,4 @@
-.overlay {
+/* .overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(20, 35, 60, 0.35);
@@ -82,4 +82,98 @@
   background-color: #eef3f8;
   color: #5990c3;
   border: 1px solid #b8c9df;
+} */
+
+.modal {
+  width: min(560px, 90vw);
+  box-sizing: border-box;
+
+  margin: 55px auto;
+  padding: 34px 38px;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(184, 201, 223, 0.9);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(60, 80, 120, 0.18);
+
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 26px;
+  color: #4f86bd;
+  font-size: 30px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2f3545;
+  font-size: 17px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+
+  border: 1px solid #b8c9df;
+  border-radius: 14px;
+  background-color: #ffffff;
+
+  font-size: 16px;
+}
+
+.textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #5990c3;
+  box-shadow: 0 0 0 3px rgba(89, 144, 195, 0.18);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.submitButton,
+.cancelButton {
+  flex: 1;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.submitButton {
+  background-color: #5990c3;
+  color: white;
+  border: 1px solid #5990c3;
+}
+
+.cancelButton {
+  background-color: #f4edf4;
+  color: #5990c3;
+  border: 1px solid #d7c2d5;
+}
+
+.submitButton:hover,
+.cancelButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
 }
