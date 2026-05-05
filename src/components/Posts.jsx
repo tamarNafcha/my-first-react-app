@@ -22,7 +22,7 @@ function Posts() {
     const [error, setError]=useState(null);
 
    useEffect(()=>{
-     fetch("https://jsonplaceholder.typicode.com/posts55555")
+     fetch("https://jsonplaceholder.typicode.com/posts")
     .then((res)=>{
         if(!res.ok)
         {
